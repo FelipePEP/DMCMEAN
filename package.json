@@ -1,0 +1,20 @@
+{
+  "name": "dmc",
+  "version": "1.0.0",
+  "description": "Nova versão do DMC com MEAN",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipePEP/DMCMEAN.git"
+  },
+  "author": "Felipe Leandro de Oliveira (PEP)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelipePEP/DMCMEAN/issues"
+  },
+  "homepage": "https://github.com/FelipePEP/DMCMEAN#readme"
+}
