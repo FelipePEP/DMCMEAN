@@ -1,7 +1,6 @@
-
 'use strict';
 
-class calculator {
+class calculatorController {
     
     static sum(){
         let response =0;
@@ -12,7 +11,13 @@ class calculator {
         return{result:response};
     }
 
-
+    static index(req,res){
+       let result =this.sum(0,req);
+        console.log(result);
+    }
 }
 
-module.exports = calculator;
+
+
+
+module.exports = calculatorController;
