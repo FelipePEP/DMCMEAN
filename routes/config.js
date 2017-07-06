@@ -15,4 +15,7 @@ module.exports = (app)=>{
     app.get('/calculator4',(req,res)=>{
         res.send(calculator.index(4));
     });
+    app.get('/calculator5',(req,res)=>{
+        res.send(calculator.index(5));
+    });
 };
