@@ -1,11 +1,8 @@
-const generatorService = require('../business/generator');
-let g = new generatorService();
+const GeneratorService = require('../business/generator');
 
 module.exports = {
-    generic: (req, res) => {
-        res.send(g.startGenerator());
-    },
-    teste: (req, res) => {       
-        return res.send("teste");//res.send(g.startGenerator(req.body.type));
+    default: (req, res) => {
+        let param = req.query;
+        res.send(new GeneratorService(param.type,param.enviroment,param.hour,param.distance));
     }
 }

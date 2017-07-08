@@ -2,41 +2,30 @@
 const rollDice = require("../services/diceService").rollDice;
 const db = require("../DB/db");
 
-class generator {
+class Generator {
     constructor(t,e,h,d) {
-        this.type = t;
-        this.enviroment = e;
-        this.hour = h;
-        this.distance =d;
-        this.encounter={
-            "type":"",
-            "description":""};                
-    }
-
-    startGenerator(){
-        this.getType();        
-        this.getEnvyroment();
-        this.getHour();
-        this.getDistance();
-        this.getEncounter();        
-        return this.response();        
-    }
-    getType(){
-        this.type = rollDice(4,true);
-        this.encounter.type = db[this.type][0];
+        this.type = t || this.setType();
+        this.enviroment = e || this.setEnvyroment();
+        this.hour = h || this.setHour();
+        this.distance =d || this.setDistance();
+        this.setEncounter();                 
     }    
-    getEnvyroment(){
-        this.enviroment = db[5][rollDice(12,true)];
+    setType(){
+        return rollDice(4,true);        
+    }    
+    setEnvyroment(){
+        return db[5][rollDice(12,true)];
     }
-    getHour(){
-        this.hour = rollDice(23,true);
+    setHour(){
+        return rollDice(23,true);
     }
-    getDistance(){
-        (this.hour > 19)?this.distance = rollDice(19,false) + 1 : this.distance = rollDice(50,false) + 20;        
+    setDistance(){
+        return (this.hour > 19)? rollDice(19,false) + 1 : rollDice(50,false) + 20;        
     }
-    getEncounter(){                 
+    setEncounter(){                 
         let descriptionRoll = rollDice(4,false);        
-        this.encounter.description = db[this.type][descriptionRoll];                 
+        this.encounter.description = db[this.type][descriptionRoll];
+        this.encounter.type = db[this.type][0];                 
     }
     response(){
         let response = "O encontro será às " + this.hour +
@@ -48,4 +37,4 @@ class generator {
     }
 }
 
-module.exports = generator;
+module.exports = Generator;
