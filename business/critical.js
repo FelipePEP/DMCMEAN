@@ -1,5 +1,6 @@
 'use strict';
-let model = require('../models/critical');
+
+const model = require('../models/critical');
 
 class Critical{
     constructor(t,b){
@@ -10,8 +11,8 @@ class Critical{
     setType(){return null}
     setBrutality(){return null}
     setDescription(){return null}
-    loadAll(){        
-        return model.find().exec();
+    async loadAll(){ 
+        return await model.find().lean();
     }
 }
 

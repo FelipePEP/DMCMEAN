@@ -8,9 +8,9 @@ module.exports = () => {
     app.use(bodyParser.json());                                     
     app.use(bodyParser.urlencoded({extended: true}));               
     app.use(bodyParser.text());                                    
-    app.use(bodyParser.json({ type: 'application/json'}));     
-    app.set('port','3000');
-    router(app);
+    app.use(bodyParser.json({ type: 'application/json'}));       
+    app.set('port','3000');    
     require('./dataBase.js')(db);
+    router(app);   
     return app;
 };

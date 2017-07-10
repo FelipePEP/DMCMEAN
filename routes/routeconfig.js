@@ -1,7 +1,8 @@
-const generatorController = require('../controller/generatorController');
-const criticalController = require('../controller/criticalController');
+
+const encounter = require('../controllers/encounter');
+const critical = require('../controllers/critical');
 
 module.exports = (app) => {      
-    app.get('/generator', generatorController.default);              
-    app.get('/critical', criticalController.default);              
+   app.get('/encounter', encounter.default);              
+   app.get('/critical', critical.default);                 
 };

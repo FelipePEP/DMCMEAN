@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/FelipePEP/DMCMEAN#readme",
   "dependencies": {
+    "express-load": "^1.1.16",
     "mongoose": "^4.11.1"
   }
 }
