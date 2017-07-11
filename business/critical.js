@@ -8,9 +8,15 @@ class Critical{
         this.brutality = b || this.setBrutality();
         this.description = this.setDescription();
     }
-    setType(){return null}
-    setBrutality(){return null}
-    setDescription(){return null}
+    setType(){
+        return null
+    }    
+    setBrutality(){
+        return null
+    }    
+    setDescription(){
+        return null
+    }    
     async loadAll(){ 
         return await model.find().lean();
     }

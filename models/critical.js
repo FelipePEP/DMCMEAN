@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 module.exports = mongoose.model('Critical',mongoose.Schema({
     type: { 
         type: String,

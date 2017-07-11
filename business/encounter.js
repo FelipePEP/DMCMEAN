@@ -1,6 +1,5 @@
 'use strict';
 const rollDice = require("../services/diceService").rollDice;
-const db = require("../DB/db");
 
 class Encounter {
     constructor(t,e,h,d) {
