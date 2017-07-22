@@ -19,6 +19,11 @@
   "homepage": "https://github.com/FelipePEP/DMCMEAN#readme",
   "dependencies": {
     "express-load": "^1.1.16",
-    "mongoose": "^4.11.1"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.7"
+  },
+  "engine":{
+   "node" : "^8.1.0" 
   }
 }
