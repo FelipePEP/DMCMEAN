@@ -10,7 +10,7 @@ module.exports = () => {
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.text());
     app.use(bodyParser.json({ type: 'application/json'}));
-    app.set('port', '3000');
+    app.set('port', (process.env.PORT || 5000));
     require('./dataBase.js')(db);
     router(app);
     return app;
