@@ -7,4 +7,5 @@ module.exports = (app) => {
     app.get('/encounter', encounter.default);
     app.get('/critical', critical.default);
     app.get('/criticalRandom', critical.random);
+    app.get('/teste', encounter.teste);
 };

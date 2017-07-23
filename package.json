@@ -23,7 +23,7 @@
     "express": "^4.15.2",
     "mongoose": "^4.9.7"
   },
-  "engine": {
-    "node": "^8.1.0"
+  "engines":{
+   "node" : "^8.1.0" 
   }
 }
