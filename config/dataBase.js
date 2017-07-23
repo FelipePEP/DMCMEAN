@@ -2,17 +2,19 @@ const mongoose = require('mongoose');
 
 module.exports = (uri) => {
     mongoose.connect(uri);
-    mongoose.connection.on('connected', () => {
+    const db = mongoose.connection;
+
+    db.on('connected', () => {
         console.log('Mongoose! Conectado em ' + uri);
     });
-    mongoose.connection.on('disconnected', () => {
+    db.on('disconnected', () => {
         console.log('Mongoose! Desconectado de ' + uri);
     });
-    mongoose.connection.on('error', () => {
+    db.on('error', () => {
         console.log(`Mongoose! Erro na conexão ${erro}`);
     });
     process.on('SIGINT', () => {
-        mongoose.connection.close(() => {
+        db.close(() => {
             console.log('Mongoose! Conexão encerrada com o término da aplicação.');
             process.exit(0);
         });
