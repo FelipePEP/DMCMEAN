@@ -2,7 +2,7 @@ console.log('config/express');
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = require('./routes');
-const db = 'mongodb://heroku_dplx7nhl:mlab*123@ds141950.mlab.com:41950/heroku_dplx7nhl'; //'mongodb://localhost:27017/API');
+const db = process.env.MONGODB_URI || 'mongodb://localhost:27017/API';
 const app = express();
 
 module.exports = () => {

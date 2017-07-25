@@ -1,6 +1,16 @@
 const mongoose = require('mongoose');
 
 module.exports = (uri) => {
+
+    const MongoClient = require('mongodb').MongoClient;
+
+    MongoClient.connect(uri, (err, Db) => {
+        Db.collection(process.argv[2]).insert(data, (err, inserted) => {
+            process.exit(0);
+            return err ? console.log(err) : console.log('Banco ativo!');
+        });
+    });
+    /*
     mongoose.connect(uri);
     const db = mongoose.connection;
 
@@ -20,4 +30,5 @@ module.exports = (uri) => {
         });
     });
     mongoose.set('debug', true);
+    */
 };
