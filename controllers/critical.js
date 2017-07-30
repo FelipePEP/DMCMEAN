@@ -7,7 +7,7 @@ module.exports = {
         const param = req.query;
         const criticals = await new business(param.type, param.brutality).loadAll();
         res.setHeader('Access-Control-Allow-Origin','*');        
-        res.json({ criticals });
+        res.json({ result:criticals });
     },
     random: async (req, res) => {
         const param = req.query;
