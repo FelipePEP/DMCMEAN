@@ -5,8 +5,10 @@ module.exports = {
 
     default: async (req, res) => {
         const param = req.query;
-        const criticals = await new business(param.type, param.brutality).loadAll();
-        res.setHeader('Access-Control-Allow-Origin','*').send(criticals);
+        let criticals = await new business(param.type, param.brutality).loadAll();
+        criticals = JSON.stringify(criticals);
+        res.setHeader('Access-Control-Allow-Origin','*');
+        res.send(criticals);
         //res.json({ data: await new business(param.type, param.brutality).loadAll() });
     },
     random: async (req, res) => {
@@ -15,3 +17,4 @@ module.exports = {
         res.send(critical.description);
     }
 };
+
