@@ -24,7 +24,7 @@ class Critical {
     }
     async random() {
         const result = await model.find().lean();
-        return result[rollDice(results.length, true)];
+        return result[rollDice(result.length, true)];
     }
 }
 
