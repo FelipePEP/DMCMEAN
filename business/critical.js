@@ -19,7 +19,8 @@ class Critical {
         return null;
     }
     async loadAll() {
-        return await model.find().lean();
+        const results = await model.find().lean();
+        return results;
     }
     async random() {
         const results = await model.find().lean();
